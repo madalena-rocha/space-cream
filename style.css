@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-heading: 'Staatliches', cursive;
+    --ff-texting: 'Palanquin', sans-serif;
+
+    --hue: 233;
+    --bg-primary: hsl(var(--hue), 100%, 97%);
+    --bg-secondary: hsl(calc(var(--hue) + 42), 18%, 79%);
+    --bg-secondary-dark: hsl(calc(var(--hue) - 15), 17%, 62%);
+    --bg-secondary-light: hsl(calc(var(--hue) + 79), 91%, 96%);
+
+    --fc-primary: hsl(0, 0%, 100%);
+    --fc-secondary: hsl(calc(var(--hue) - 1), 17%, 35%);
+    --fc-secondary-dark: hsl(calc(var(--hue) + 41), 84%, 12%);
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+    --fs-heading: 4rem;
+    --fs-texting: 2rem;
+}
+
+body {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-body);
+    font-weight: 400;
+
+    background-color: var(--bg-primary);
+    color: var(--fc-secondary);
+}
+
+.page {
+    max-width: 38.4rem;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    text-align: center;
+    padding: 3.2rem 0 2.9rem;
+    
+    background-color: var(--bg-secondary-dark);
+    color: var(--fc-primary);
+}
+
+header img {
+    margin-bottom: 3.2rem;
+    width: 137px;
+
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25)); 
+}
+
+header h1 {
+    font-size: var(--fs-heading);
+    line-height: 3.4rem;
+    
+    letter-spacing: 0.05em;
+    
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    background-color: var(--bg-secondary);
+
+    height: 4.9rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    text-align: center;
+
+    padding: 1.4rem 3.2rem 6rem;
+}
+
+main p {
+    font-family: var(--ff-texting);
+    font-size: var(--fs-texting);
+    line-height: 1.5rem;
+    
+    color: var(--fc-secondary-dark);
+
+    margin-bottom: 6.3rem;
+    max-width: 30.5rem;
+}
+
+.card {
+    position: relative;
+}
+
+.card + .card {
+    margin-top: 3.6rem;
+}
+
+.card img {
+    object-fit: cover;
+    border-radius: 20px;
+    
+    transition: all 200ms;
+    animation: downtop 700ms;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    opacity: 0.4;
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    font-size: var(--fs-texting);
+    line-height: 3.4rem;
+
+    letter-spacing: 0.05em;
+
+    width: 11.2rem;
+    border-radius: 20px;
+
+    background: var(--bg-secondary-light);
+
+    animation: topdown 700ms 350ms backwards;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
