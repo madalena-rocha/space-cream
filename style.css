@@ -83,8 +83,6 @@ header p {
     display: none;
 
     font-family: var(--ff-header-p);
-    font-size: var(--fs-header-p);
-    line-height: 2rem;
 
     margin-top: 3.2rem;
     max-width: 27.5rem;
@@ -270,6 +268,11 @@ footer a {
     header h1 {
         font-size: 4.8rem;
         height: 7rem;
+    }
+
+    header p {
+        font-size: var(--fs-header-p);
+        line-height: 2rem;
     }
     
     .repeated {
